@@ -10,6 +10,7 @@ function Signup() {
 	const [classError, setclassError] = useState('');
 	const [groupError, setgroupError] = useState('');
 	const [signupError, setsignupError] = useState('');
+	const [codeError, setcodeError] = useState('');
 	
 	
 	const clearErrors = () => {
@@ -18,6 +19,7 @@ function Signup() {
 	  setclassError('');
 	  setgroupError('');
       setsignupError('');
+	  setcodeError('');
 	};
 	
 	const clearinputs = () => {
@@ -25,6 +27,7 @@ function Signup() {
 		document.getElementById("password").value ='';
 		document.getElementById("class").value ='';
 		document.getElementById("group").value ='';
+		document.getElementById("code").value ='';
 	};
 	
 	const handleSignup = () => {
@@ -35,7 +38,8 @@ function Signup() {
 		const password = document.querySelector('#password').value;
 		const _class = document.querySelector('#class').value;
 		const group = document.querySelector('#group').value;
-		var [flag1, flag2, flag3, flag4] = [false, false, false, false];
+		const code = document.querySelector('#code').value;
+		var [flag1, flag2, flag3, flag4, flag5] = [false, false, false, false, false];
 		
 		if (name === ""){
 			setnameError("이름을 입력해 주세요!");
@@ -69,8 +73,17 @@ function Signup() {
 			setgroupError("소속을 0, 1, 2, 3으로 입력해주세요!");
 			document.getElementById("group").value ='';
 		}
+		
+		if (code === "") {
+			setcodeError("코드를 적어주세요!")
+			document.getElementById("code").value ='';
+		} else if (code !== "3537"){
+			setcodeError("보안코드가 올바르지 않습니다.")
+		} else if (code === "3537"){
+			flag5 = true;
+		}
 
-		if (flag1 === true && flag2 === true && flag3 === true && flag4 === true) {
+		if (flag1 === true && flag2 === true && flag3 === true && flag4 === true && flag5 === true) {
 			const doc_user = db.collection("user").doc(name);
 			doc_user.get().then((doc) => {
 				if(doc.exists){
@@ -123,7 +136,9 @@ function Signup() {
 	return(
 	<div>
 		<div className="header">
-			<h1>Points App</h1>
+			<Link to="/">
+				<h1 className="head">Points App</h1>
+			</Link>
 		</div>
 		<div className="signup">
 			<div className="signupContainer">
@@ -150,6 +165,11 @@ function Signup() {
 					<p className="small">* 여단본부 : 0, 1대대 : 1, 2대대 : 2, 3대대 : 3을 입력해주세요</p>
 					<input id="group" placeholder="소속을 적어주세요..." type="text"/>
 					<p className="errorMsg">{groupError}</p>
+					
+					<h2>보안 코드</h2>
+					<p className="small">* 보안 코드를 입력해야만 회원가입이 가능합니다!</p>
+					<input id="code" placeholder="보안코드를 적어주세요..." type="text"/>
+					<p className="errorMsg">{codeError}</p>
 				</div>
 				<div className="footer">
 					<div className="blank">

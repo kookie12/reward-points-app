@@ -315,7 +315,9 @@ function Give_points (props) {
 	return (
 		<div className="Give_points">
 			<div className="header">
-				<h1>Points App</h1>
+				<RouterLink to="/Soldier">
+					<h1 className="head">Points App</h1>
+				</RouterLink>
 			</div>
 			<AppShell 
 				_class={__class}

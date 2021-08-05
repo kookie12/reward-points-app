@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography'; //문장을 출력할 때
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import image from './user.JPG';
+import { Link } from "react-router-dom";
 
 function Soldier (props) {
 	
@@ -106,7 +107,9 @@ function Soldier (props) {
 	return (
 		<div>
 			<div className="header">
-				<h1>Points App</h1>
+				<Link to="/Soldier">
+					<h1 className="head">Points App</h1>
+				</Link>
 			</div>
 			<AppShell 
 				_class={__class}

@@ -25,6 +25,11 @@
   font-size: 1.5rem;
 }
 
+.header h1 {
+  color: #627DFE;
+  font-size: 30px;
+}
+
 .signup {
   width: 100%;
   min-height: 100vh;
@@ -97,7 +102,8 @@ font-family: 'Gowun Dodum', sans-serif;
 
 .signup .signupContainer .box .errorMsg{
   color: red;
-  font-size: 18px;
+	/* 이거 크기 줄이기! */
+  font-size: 17px; 
   margin-left: 23px;
 
 }

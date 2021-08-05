@@ -19,9 +19,10 @@
   position: relative;
 }
 
-.header > h1 {
+.header .header_link .head {
   color: #627DFE;
   font-size: 1.5 rem;
+	font-family: 'Gowun Dodum', sans-serif;
 }
 
 .Give_n_points .background {

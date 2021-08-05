@@ -32,7 +32,6 @@ function Login() {
 	  setpasswordError('');	  
 	};
 
-	
 	const handleLogin = () => {
 		
 		console.log("here : ", login_flag);
@@ -93,6 +92,22 @@ function Login() {
 						//console.log('recents 2: ', recents);
 						//login_flag = true;
 						console.log(loginError);
+						<Link to={{
+								pathname: "/Soldier",
+								state: {
+									pass,
+									name,
+									password,
+									_class,
+									group,
+									points,
+									n_points,
+									recents
+								}
+							}}>
+						</Link>
+					
+						
 						
 					} else {
 						console.log("비밀번호가 맞지 않습니다!");
@@ -123,7 +138,9 @@ function Login() {
 	return(
 	<div>
 		<div className="header">
-			<h1>Points App</h1>
+			<Link to="/">
+				<h1 className="head">Points App</h1>
+			</Link>
 		</div>
 		<div className="login">
 			<div className="loginContainer">
