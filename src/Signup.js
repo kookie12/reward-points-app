@@ -83,53 +83,60 @@ function Signup() {
 			flag5 = true;
 		}
 
-		if (flag1 === true && flag2 === true && flag3 === true && flag4 === true && flag5 === true) {
-			const doc_user = db.collection("user").doc(name);
-			doc_user.get().then((doc) => {
-				if(doc.exists){
-					console.log("데이터 존재 : ", doc.data());
-					console.log("이미 존재하는 계정입니다!");
-					setsignupError("이미 존재하는 계정입니다!");
-					clearinputs();
-				} else {
-					doc_user.set({
-						id: name,
-						pw: password,
-						class: _class,
-						group: group,
-						points: 0,
-						n_points:0,
-						recents: []
-					}).then(()=>{
-						console.log("Document successfully written!");
-						setsignupError("성공적으로 회원가입 되었습니다!")
+		if (flag1 === true && flag2 === true && flag3 === true && flag4 === true && flag5 === true) {			
+			if (_class === '0') {
+				const doc_user = db.collection("user").doc(name); //나중에 여기를 ganbu로 바꿔야함!!
+				doc_user.get().then((doc) => {
+					if(doc.exists){
+						console.log("데이터 존재 : ", doc.data());
+						console.log("이미 존재하는 계정입니다!");
+						setsignupError("이미 존재하는 계정입니다!");
 						clearinputs();
-						})
-				}
-			}).catch((error) => {
-				console.log("error!!! : ", error);
-			});
-			
-			
-		// 	db.collection('user').doc(name).set({
-		// 		id: name,
-		// 		pw: password,
-		// 		class: _class,
-		// 		group: group,
-		// 		points: 0,
-		// 		recents: ""
-		// 	}).then(()=>{
-		// 		console.log("Document successfully written!");
-		// 		setsignupError("성공적으로 회원가입 되었습니다!")
-		// 		document.getElementById("name").value ='';
-		// 		document.getElementById("password").value ='';
-		// 		document.getElementById("class").value ='';
-		// 		document.getElementById("group").value ='';
-		// 	})
-		// 	.catch((error) => {
-		// 	console.error("Error writing document: ", error);
-		// });
-			
+					} else {
+						doc_user.set({
+							id: name,
+							pw: password,
+							class: _class,
+							group: group,
+							points: 0,
+							n_points:0,
+							recents: []
+						}).then(()=>{
+							console.log("Document successfully written!");
+							setsignupError("성공적으로 회원가입 되었습니다!")
+							clearinputs();
+							})
+					}
+				}).catch((error) => {
+					console.log("error!!! : ", error);
+				});
+			} else {
+				const doc_user = db.collection("user").doc(name);
+				doc_user.get().then((doc) => {
+					if(doc.exists){
+						console.log("데이터 존재 : ", doc.data());
+						console.log("이미 존재하는 계정입니다!");
+						setsignupError("이미 존재하는 계정입니다!");
+						clearinputs();
+					} else {
+						doc_user.set({
+							id: name,
+							pw: password,
+							class: _class,
+							group: group,
+							points: 0,
+							n_points:0,
+							recents: []
+						}).then(()=>{
+							console.log("Document successfully written!");
+							setsignupError("성공적으로 회원가입 되었습니다!")
+							clearinputs();
+							})
+					}
+				}).catch((error) => {
+					console.log("error!!! : ", error);
+				});	
+			}
 		}
 	};
 	
@@ -162,7 +169,7 @@ function Signup() {
 					<p className="errorMsg">{classError}</p>
 					
 					<h2>소속</h2>
-					<p className="small">* 여단본부 : 0, 1대대 : 1, 2대대 : 2, 3대대 : 3을 입력해주세요</p>
+					<p className="small">* 직할중대 : 0, 1대대 : 1, 2대대 : 2, 3대대 : 3을 입력해주세요</p>
 					<input id="group" placeholder="소속을 적어주세요..." type="text"/>
 					<p className="errorMsg">{groupError}</p>
 					
@@ -173,7 +180,13 @@ function Signup() {
 				</div>
 				<div className="footer">
 					<div className="blank">
-						<button className="btn-submit-form" onClick={handleSignup}>회원가입 하기</button>
+						<Link to='/'>
+							<button className="btn-submit-form1" onClick={handleSignup}>로그인 페이지</button>
+						</Link>
+					</div>
+					
+					<div className="blank">
+						<button className="btn-submit-form2" onClick={handleSignup}>회원가입 하기</button>
 					</div>
 				</div>
 			    <p className="errorMsg">{signupError}</p>

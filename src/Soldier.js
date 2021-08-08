@@ -9,6 +9,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import image from './user.JPG';
 import { Link } from "react-router-dom";
+import fire from './config/fire';
 
 function Soldier (props) {
 	
@@ -40,15 +41,14 @@ function Soldier (props) {
 		{console.log("info 1 : ", __class, __group, __name, __points, __recents, storage_flag );}
 		if (storage_flag === false) {
 			console.log("setup check ~~ ");
-			const {_class, group, name, points, n_points, recents} = props.location.state;	
-			set__class((__class) => _class);
-			set__group((__group) =>group);
-			set__name((__name) => name);
-			set__points((__points) => points);
-			set__npoints((__npoints) => n_points);
-			set__recents((__recents) => recents);
-			console.log("info 21: ", _class, group, name, points, recents);
-			console.log("info 2 : ", __class, __group, __name, __points, __recents, storage_flag ); //여기서 못받아오고 있음. 비동기
+			const {login_class, login_group, login_name, login_points, login_npoints, login_recents} = props.location.state;	
+			set__class((__class) => login_class);
+			set__group((__group) => login_group);
+			set__name((__name) => login_name);
+			set__points((__points) => login_points);
+			set__npoints((__npoints) => login_npoints);
+			set__recents((__recents) => login_recents);
+			console.log("info 2 : ", login_class, login_group, login_name, login_points, login_recents, storage_flag ); //여기서 못받아오고 있음. 비동기
 			console.log("info 3 : ", typeof(__recents) );
 			
 			set__storage_flag((storage_flag) => true);
@@ -64,10 +64,37 @@ function Soldier (props) {
 			})
 			console.log("array -- : ", array);
 			console.log("__recent_log -- : ", __recent_log);
-			
+		
 		}
 		
 		if (storage_flag === true) {
+			//서버에서 다시 받아오는 부분 -> 실시간 업데이트 가능!
+			//새로고침하면 points, npoints, recents 값을 다시 받아온다.
+			//만일 useEffect => [points, npoints, recents] 이렇게 하면 항상 데이터를 받아와서 터질것임..
+			const db = fire.firestore();
+			if(__class === '0') {
+				const doc_user = db.collection("user").doc(__name); //나중에 여기를 ganbu로 바꿔야함
+				doc_user.get().then((doc) => {
+					if(doc.exists){
+						console.log("signup 페이지에서 서버로부터 다시 데이터 받아왔음!!")
+						set__points((__points) => doc.data().points);
+						set__npoints((__npoints) => doc.data().n_points);
+						set__recents((__recents) => doc.data().recents);
+					}
+					
+				})
+			} else {
+				const doc_user = db.collection("user").doc(__name);
+				doc_user.get().then((doc) => {
+					if(doc.exists){
+						console.log("signup 페이지에서 서버로부터 다시 데이터 받아왔음!!")
+						set__points((__points) => doc.data().points);
+						set__npoints((__npoints) => doc.data().n_points);
+						set__recents((__recents) => doc.data().recents);
+					}
+					
+				})	
+			}
 			console.log("sibal~~~~~~");
 			window.localStorage.setItem('test', '올라가라');
 			window.localStorage.setItem('__class', JSON.stringify(__class)); //JSON.stringify(__class
@@ -80,28 +107,16 @@ function Soldier (props) {
 		} 
 	};
 	
-	const submit_localstorage = () => {
-		window.localStorage.setItem('test', '올라가라');
-		window.localStorage.setItem('__class', JSON.stringify(__class)); //JSON.stringify(__class
-		window.localStorage.setItem('__group', JSON.stringify(__group));
-		window.localStorage.setItem('__name', JSON.stringify(__name));
-		window.localStorage.setItem('__points', JSON.stringify(__points));
-		window.localStorage.setItem('__npoints', JSON.stringify(__npoints));
-		window.localStorage.setItem('__recents', JSON.stringify(__recents));
-		window.localStorage.setItem('storage_flag', JSON.stringify(storage_flag));
-	}
-	
 	useEffect(() => {
 		console.log("-----------함수 실행 --------------");
 		console.log('component mounted');
 		const callAjax = () => { console.log(__class, __group, __name, __points, __recents, storage_flag); }; 
-		callAjax();
+		callAjax(); 
 		setup();
 		return () => {
 		  console.log("I'm dying...");
 		};
-	}, [__class, __group, __name, __points, __recents, storage_flag, __recent_log]); //흠.. 신기하네..
-	
+	}, [__class, __group, __name, storage_flag, __recent_log]); //흠.. 신기하네..
 	
 	
 	return (
@@ -121,7 +136,7 @@ function Soldier (props) {
 					<Card>
 						<CardContent>
 							<img src={ image } width="100" height="100" alt="My Image" />
-							<div className="name">{__name} 님 환영합니다!</div>
+							<div className="name">{__name}님 환영합니다!</div>
 							{
 								parseInt(__group) === 0 ? 
 									<div className="text">소속 : 육군 3537부대 직할중대</div> : 
@@ -151,16 +166,14 @@ function Soldier (props) {
 							}
 						
 							{ 
-							
-							Object.values({__recents}).map((current, index) => 
+								Object.values({__recents}).map((current, index) => 
 								( current.length === 0 ) ? <div className="recent_log"> 아직 부여한 상점이 없습니다! </div> :
 								( current.map((item, index) =>
 									<div className="recent_log"> {item} </div>
 								) 				
-							))
-							
+								))
 							}
-
+							
 							
 							
 						</CardContent>

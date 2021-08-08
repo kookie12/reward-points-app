@@ -121,7 +121,7 @@
 .Give_n_points .background .Container .box2  {
 	flex-direction: row;
 	width: 300px;
-    height: 1460px;
+    height: auto;
 	border: 5px solid #f2f3f8;
 	font-family: 'Gowun Dodum', sans-serif; 
 	font-size: 20px;

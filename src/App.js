@@ -6,6 +6,8 @@ import Login from './Login.js';
 import Soldier from './Soldier.js';
 import Give_points from './Give_points';
 import Give_n_points from './Give_n_points';
+import Notice from './Notice';
+import Menu from './Menu';
 // import Home from './Home.js';
 
 class App extends React.Component {
@@ -18,6 +20,8 @@ class App extends React.Component {
 				<Route path="/Soldier" component={Soldier} /> 
 				<Route path="/Give_points" component={Give_points} /> 
 				<Route path="/Give_n_points" component={Give_n_points} /> 
+				<Route path="/Notice" component={Notice} /> 
+				<Route path="/Menu" component={Menu} /> 
 			</HashRouter>
 			
 		);

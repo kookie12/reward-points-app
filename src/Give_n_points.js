@@ -402,7 +402,7 @@ function Give_n_points (props) {
 							<h2> 소속 : </h2>
 							<input id="s_group" placeholder="소속을 입력해주세요..." type="text"/>		
 						</div>
-						<p className="small">* 여단본부는 0, 1대대는 1, 2대대는 2, 3대대는 3을</p>
+						<p className="small">* 직할중대는 0, 1대대는 1, 2대대는 2, 3대대는 3을</p>
 						<p className="small">입력해주세요</p>
 						<div className="flex_container">
 							<h2> 날짜 : </h2>

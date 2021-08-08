@@ -72,7 +72,6 @@
   transition: all 0.2s ease;
   display: flex;
   flex-direction: column;
-
 }
 
 .signup .signupContainer .text {
@@ -111,8 +110,8 @@ font-family: 'Gowun Dodum', sans-serif;
 .signup .signupContainer .box .small{
   color: violet;
   font-size: 14px;
-  margin-left: 23px;
-	font-family: 'Gowun Dodum', sans-serif;
+  margin-left: 9px;
+  font-family: 'Gowun Dodum', sans-serif;
 }
 
 .signup .signupContainer .box > input[type=text] {
@@ -124,6 +123,7 @@ font-family: 'Gowun Dodum', sans-serif;
   margin-left: 40px;
   font-size: 1.2rem;
   transition: all 0.2s ease;
+	width: 220px;
 }
 
 .signup .signupContainer .box > input::placehoder {
@@ -158,7 +158,7 @@ font-family: 'Gowun Dodum', sans-serif;
   margin-right: 20px;
 }
 
-.signup .signupContainer .footer .blank .btn-submit-form {
+.signup .signupContainer .footer .blank .btn-submit-form1 {
   border: 0;
   appearance: none;
   -webkit-appearance: none;
@@ -167,16 +167,34 @@ font-family: 'Gowun Dodum', sans-serif;
   padding: 15px 20px;
   border-radius: 5px;
   color: #fff;
-  font-size: 1rem;
+  font-size: 14px;
   font-family: Nunito, sans-serif;
   background: #6381e8;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
   transition: all 0.2s ease;
   margin-bottom: 25px;  
-  width: 150px;
+	margin-right: -15px; 
+  width: 125px;
 	font-family: 'Gowun Dodum', sans-serif;
+}
 
-	
+.signup .signupContainer .footer .blank .btn-submit-form2 {
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-family: Nunito, sans-serif;
+  background: #6381e8;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
+  transition: all 0.2s ease;
+  margin-bottom: 25px;  
+  width: 125px;
+	font-family: 'Gowun Dodum', sans-serif;
 }
 
 .signup .signupContainer .errorMsg {

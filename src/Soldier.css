@@ -72,12 +72,12 @@
 
 .Soldier .Container .name {
   color: black;
-  font-size: 1.8rem;
+  font-size: 25px;
   margin-top: 0px;
   margin-bottom: 10px;	
   text-align: center;  /* 글씨 가운데 정렬 */
-  font-family: 'Nanum Pen Script', cursive;
-
+  /* font-family: 'Nanum Pen Script', cursive; */
+  font-family: 'Gowun Dodum', sans-serif; 
 }
 
 .Soldier .Container .h2 {
@@ -85,7 +85,8 @@
   margin-top: 0px;
   margin-left: 50px;
   margin-bottom: 0px;	
-  font-family: 'Nanum Pen Script', cursive;
+  /*font-family: 'Nanum Pen Script', cursive;*/
+  font-family: 'Gowun Dodum', sans-serif; 
 }
 
 .Soldier .Container img {
@@ -95,9 +96,9 @@
 
 .Soldier .Container .text {
 	color: #627DFE;
-	margin-left: 20px;
-	font-size: 1.5rem;
-	font-family: 'Nanum Pen Script', cursive;
+	margin-left: 13px;
+	font-size: 17px;
+    font-family: 'Gowun Dodum', sans-serif; 
 	text-align: left; 
 }
 

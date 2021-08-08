@@ -256,7 +256,12 @@ function Give_points (props) {
 						
 						//이제 간부 페이지에서 로드하는 부분 s_name : 병사 이름, __name : 간부 / 분대장 이름
 						// _ganbu 변수들은 간부가 볼 홈페이지에서 사용될 변수들.. -> 즉 병사의 정보임!
-						const doc_user_ganbu = db.collection("user").doc(__name);	
+						if (__class === '0') {
+							var identify = "ganbu"
+						} else {
+							var identify = "user"
+						}
+						const doc_user_ganbu = db.collection(identify).doc(__name);	
 						doc_user_ganbu.get().then((doc) => {
 							const temp_ganbu = doc.data().recents
 							var belong_ganbu = ''
@@ -337,7 +342,7 @@ function Give_points (props) {
 							<h2> 소속 : </h2>
 							<input id="s_group" placeholder="소속을 입력해주세요..." type="text"/>		
 						</div>
-						<p className="small">* 여단본부는 0, 1대대는 1, 2대대는 2, 3대대는 3을</p>
+						<p className="small">* 직할중대는 0, 1대대는 1, 2대대는 2, 3대대는 3을</p>
 						<p className="small">입력해주세요</p>
 						<div className="flex_container">
 							<h2> 날짜 : </h2>

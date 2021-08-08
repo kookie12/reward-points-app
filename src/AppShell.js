@@ -23,12 +23,22 @@ class AppShell extends React.Component {
         super(props);
         this.state = {
             toggle: false, //버튼을 누르면 toggle 값이 true로 된다!
-			_class: ''
+			_class: '',
         };
     }
 	
-	handleDrawerToggle = () => this.setState({toggle: !this.state.toggle})
+	handleDrawerToggle = () => {
+		this.setState({toggle: !this.state.toggle});
+	}
 
+	toggleDrawer = (open) => (event) => {
+		console.log("event.type : ", event.type);
+		if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+			return ;
+		} 
+		this.setState({toggle: open})
+	}
+		
 	render() {
 			const { classes, group, name, _class } = this.props;
 			
@@ -41,17 +51,17 @@ class AppShell extends React.Component {
 								<p>Home</p>
 							</IconButton>
 						</AppBar>
-						<Drawer open={this.state.toggle}>
+						<Drawer open={this.state.toggle} onClose={this.toggleDrawer(false)}>
 							<MenuItem onClick={this.handleDrawerToggle}>
 								<Link component={RouterLink} to="/Soldier">
-									<div className="notice">
+									<div className="notice_appshell">
 										<p>홈 화면</p>
 									</div>	
 								</Link>
 							</MenuItem>
 							<MenuItem onClick={this.handleDrawerToggle}>
-								<Link component={RouterLink} to="/Soldier">
-									<div className="notice">
+								<Link component={RouterLink} to="/Notice">
+									<div className="notice_appshell">
 										<p>공지사항</p>
 									</div>
 								</Link>
@@ -69,7 +79,7 @@ class AppShell extends React.Component {
 												}		
 										}}>
 												
-											<div className="notice">
+											<div className="notice_appshell">
 												<p>상점 부여</p>
 											</div>
 										</Link>
@@ -83,7 +93,7 @@ class AppShell extends React.Component {
 													name	
 												}		
 										}}>
-											<div className="notice">
+											<div className="notice_appshell">
 												<p>벌점 부여</p>
 											</div>
 										</Link>
@@ -93,8 +103,16 @@ class AppShell extends React.Component {
 							}	
 							
 							<MenuItem onClick={this.handleDrawerToggle}>
+								<Link component={RouterLink} to="/Menu">
+									<div className="notice_appshell">
+										<p>식단 메뉴</p>
+									</div>
+								</Link>
+							</MenuItem>
+							
+							<MenuItem onClick={this.handleDrawerToggle}>
 								<Link component={RouterLink} to="/">
-									<div className="notice">
+									<div className="notice_appshell">
 										<p>로그아웃</p>
 									</div>	
 								</Link>
