@@ -154,22 +154,22 @@ function Signup() {
 				</div>
 				<div className="box">
 					<h2>이름</h2> 
-					<p className="small">* 실제 이름을 적어주세요</p>
+					<p className="small">* 실제 이름을 입력!</p>
 					<input id="name" placeholder="사용자 이름을 적어주세요..." type="text"/>
 					<p className="errorMsg">{nameError}</p>
 					
 					<h2>비밀번호</h2>
-					<p className="small">* 최소 네 자리 이상으로 적어주세요</p>
+					<p className="small">* 최소 네 자리 이상 입력!</p>
 					<input id="password" placeholder="비밀번호를 적어주세요..." type="text"/>
 					<p className="errorMsg">{passwordError}</p>
 					
 					<h2>간부/병사 구분</h2>
-					<p className="small">* 간부 : 0, 분대장 : 1, 병사 : 2를 입력해주세요</p>
+					<p className="small">* 간부 : 0 / 분대장 : 1 / 병사 : 2 입력!</p>
 					<input id="class" placeholder="간부/병사를 적어주세요..." type="text"/>
 					<p className="errorMsg">{classError}</p>
 					
 					<h2>소속</h2>
-					<p className="small">* 직할중대 : 0, 1대대 : 1, 2대대 : 2, 3대대 : 3을 입력해주세요</p>
+					<p className="small">* 직할중대 : 0 / 1대대 : 1 / 2대대 : 2 / 3대대 : 3 입력!</p>
 					<input id="group" placeholder="소속을 적어주세요..." type="text"/>
 					<p className="errorMsg">{groupError}</p>
 					

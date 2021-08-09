@@ -168,7 +168,7 @@ function Login(props) {
 		<div className="login">
 			<div className="loginContainer">
 				<div className="text">
-					<h1>로그인 페이지</h1>
+					<h1>로그인</h1>
 				</div>
 				<div className="box">
 					<h2>사용자 이름</h2>

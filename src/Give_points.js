@@ -257,7 +257,7 @@ function Give_points (props) {
 						//이제 간부 페이지에서 로드하는 부분 s_name : 병사 이름, __name : 간부 / 분대장 이름
 						// _ganbu 변수들은 간부가 볼 홈페이지에서 사용될 변수들.. -> 즉 병사의 정보임!
 						if (__class === '0') {
-							var identify = "ganbu"
+							var identify = "user"
 						} else {
 							var identify = "user"
 						}
