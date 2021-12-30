@@ -1,6 +1,6 @@
 # Reward Points App
 ###Reward Points App with React
-* https://reward-points-app.web.app/#/ -> 해당 사이트에 접속하면 볼 수 
+* https://reward-points-app.web.app/#/ -> 해당 사이트에 접속하면 볼 수 있습니다.
 * 군대에 있을 때 심심해서 상벌점을 줄 수 있는 어플을 만들어보았습니다.
 * 상점은 사유에 따라 모두 다르며, 보통 3점에서 30점까지 다양합니다.
 * 벌점은 거의 받는 경우가 없지만, 지시 불이행의 경우 받는 것도 보았습니다.
