@@ -18,8 +18,7 @@
 <img src="https://user-images.githubusercontent.com/48863707/147737684-dbc7ca3c-5a6d-454e-bafc-beb2485ceb61.png" width="30%" height="30%">
 
 ### 2. Sign Up Page
-<img src="https://user-images.githubusercontent.com/48863707/147737786-c44ff3e9-363e-4c53-977d-44e39cc464f9.png" width="50%" height="50%">
-<img src="https://user-images.githubusercontent.com/48863707/147738658-656feec2-16ab-45d7-bf98-4e17726b45c8.png" width="50%" height="50%">
+<img src="https://user-images.githubusercontent.com/48863707/147738658-656feec2-16ab-45d7-bf98-4e17726b45c8.png" width="60%" height="60%">
 
 ### 3. 홈화면
 
