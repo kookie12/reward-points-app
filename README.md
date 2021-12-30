@@ -1,3 +1,29 @@
+# Reward Points App
+Reward Points App with React
+* 군대에 있을 때 심심해서 상벌점을 줄 수 있는 어플을 만들어보았습니다.
+* 상점은 사유에 따라 모두 다르며, 보통 3점에서 30점까지 다양합니다.
+* 벌점은 거의 받는 경우가 없지만, 지시 불이행의 경우 받는 것도 보았습니다.
+* 기존에 상벌점을 받기 위해선 종이에 일일이 상점과 사유, 부여자를 모두 작성하고 상급 지시자에게 서명을 받아야 하지만, 어플을 통해 이와 같은 절차를 손쉽게 관리할 수 있습니다.
+* 상점 30점에 포상휴가 1일, 벌점 30점에 휴가 -1일이 됩니다.
+
+### 0. Introduce
+* React를 이용해 front를 구성하였고, firebase를 이용해 backend를 만들었습니다.
+* 회원가입은 직접 javascript 코드로 구현하였고, 회원 데이터베이스는 모두 firebase를 통해 관리됩니다.
+* React를 이용하여 웹페이지에 호스트하였고, expo를 통해 Android 및 IOS 앱으로 배포하였습니다.
+* 일과 외 시간과 주말을 이용해 틈틈히 만들었으며, 모두 만드는데 2달정도 소요되었습니다. 
+* 사지방 컴퓨터는 매번 리부팅되기 때문에 ide조차 제대로 사용하지 못하였으며 cloud로 작업하였습니다.
+
+### 1. Initial screen
+<img src="https://user-images.githubusercontent.com/48863707/147737684-dbc7ca3c-5a6d-454e-bafc-beb2485ceb61.png" width="70%" height="70%">
+
+### 2. Sign Up Page
+<img src="https://user-images.githubusercontent.com/48863707/147737786-c44ff3e9-363e-4c53-977d-44e39cc464f9.png" width="70%" height="70%">
+
+### 3. 홈화면
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
