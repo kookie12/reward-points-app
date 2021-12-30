@@ -19,6 +19,8 @@
 
 ### 2. Sign Up Page
 <img src="https://user-images.githubusercontent.com/48863707/147738658-656feec2-16ab-45d7-bf98-4e17726b45c8.png" width="60%" height="60%">
+* 보안코드가 맞지 않으면 회원가입을 하지 못합니다. 
+* 보안상의 이유로 공개하지 않습니다.
 
 ### 3. 홈화면
 
