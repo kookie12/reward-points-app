@@ -14,7 +14,7 @@ Reward Points App with React
 * 사지방 컴퓨터는 매번 리부팅되기 때문에 ide조차 제대로 사용하지 못하였으며 cloud로 작업하였습니다.
 
 ### 1. Initial screen
-<img src="https://user-images.githubusercontent.com/48863707/147737684-dbc7ca3c-5a6d-454e-bafc-beb2485ceb61.png" width="70%" height="70%">
+<img src="https://user-images.githubusercontent.com/48863707/147737684-dbc7ca3c-5a6d-454e-bafc-beb2485ceb61.png" width="30%" height="30%">
 
 ### 2. Sign Up Page
 <img src="https://user-images.githubusercontent.com/48863707/147737786-c44ff3e9-363e-4c53-977d-44e39cc464f9.png" width="70%" height="70%">
