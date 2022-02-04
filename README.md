@@ -1,4 +1,4 @@
-# Reward Points App
+# Reward Points App : 상벌점을 관리할 수 있는 어플
 ### Reward Points App with React
 * https://reward-points-app.web.app/#/ -> 해당 사이트에 접속하면 볼 수 있습니다.
 * 군대에 있을 때 심심해서 상벌점을 줄 수 있는 어플을 만들어보았습니다.
