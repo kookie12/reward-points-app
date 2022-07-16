@@ -24,9 +24,7 @@
 <img src="https://user-images.githubusercontent.com/48863707/147738658-656feec2-16ab-45d7-bf98-4e17726b45c8.png" width="60%" height="60%">
 
 ### 3. 홈화면
-
-
-
+*
 
 # Getting Started with Create React App
 
